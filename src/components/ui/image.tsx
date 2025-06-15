@@ -1,8 +1,6 @@
 'use client'
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
-import { useState } from 'react';
 
 // Interface pour les compétences
 interface Skill {
@@ -96,7 +94,6 @@ const ThemedSvg = ({ name, src, size = 120, index }: ThemedSvgProps) => {
 
 // Composant principal pour la section Compétences
 const SkillsSection = () => {
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <section className="relative bg-transparent py-16 sm:py-24 overflow-hidden">

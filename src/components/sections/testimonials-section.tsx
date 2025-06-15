@@ -60,9 +60,9 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-jura font-bold text-dark">
-            Ce qu'on dit <span className="text-primary">à propos de moi</span>
-          </h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-jura font-bold text-dark">
+            Ce qu&rsquo;on dit <span className="text-primary">à propos de moi</span>
+            </h2>
           <p className="mt-4 text-lg sm:text-xl font-montserrat text-gray max-w-2xl mx-auto">
             Des retours authentiques de ceux qui ont collaboré avec moi sur différents projets.
           </p>
@@ -90,7 +90,7 @@ const TestimonialsSection = () => {
               {/* Testimonial Content */}
               <div className="mt-6">
                 <p className="text-sm font-montserrat text-gray italic mb-4">
-                  "{testimonial.quote}"
+                  &quot;{testimonial.quote}&quot;
                 </p>
                 <div className="flex items-center gap-4">
                   {/* Avatar Placeholder */}

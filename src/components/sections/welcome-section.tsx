@@ -1,9 +1,7 @@
 'use client'
 import { motion } from "framer-motion";
 import { Code, ArrowRight } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
-import VectorLine from "../design/vector";
 
 const WelcomeSection = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -56,7 +54,7 @@ const WelcomeSection = () => {
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl font-montserrat text-gray-600 max-w-3xl mx-auto">
-            Je construis des solutions web modernes et performantes, du front-end au back-end, avec une passion pour l'innovation et le design intuitif.
+            Je construis des solutions web modernes et performantes, du front-end au back-end, avec une passion pour l&apos;innovation et le design intuitif.
           </p>
 
           <motion.a

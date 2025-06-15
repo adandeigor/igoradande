@@ -1,10 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
-
-// Interface pour la réponse
-interface ApiResponse {
-  message: string;
-}
 
 export  async function POST(req: Request) {
  

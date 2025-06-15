@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion';
-import { Mail, Send, ArrowRight } from 'lucide-react';
+import {  Send } from 'lucide-react';
 import { useState } from 'react';
 
 const ContactSection = () => {
@@ -37,7 +37,7 @@ const ContactSection = () => {
       } else {
         setResponseMessage(`Erreur : ${result.message}`);
       }
-    } catch (error) {
+    } catch {
       setResponseMessage('Une erreur est survenue. Veuillez réessayer plus tard.');
     } finally {
       setIsSubmitting(false);

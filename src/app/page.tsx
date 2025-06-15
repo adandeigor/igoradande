@@ -1,6 +1,5 @@
 "use client";
 
-import Navigation from "@/components/navigation/navigation";
 import AboutSection from "@/components/sections/about-section";
 import ContactSection from "@/components/sections/contatc-section";
 import ProjectsSection from "@/components/sections/project-section";

@@ -56,7 +56,6 @@ const ServicesSection = () => {
   };
 
     // Add a separate state for CTA hover effect
-    const [ctaHovered, setCtaHovered] = useState<boolean>(false);
 
    const [isHovered, setIsHovered] = useState<boolean>(false);
   return (

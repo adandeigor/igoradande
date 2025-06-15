@@ -80,23 +80,6 @@ const education: Education[] = [
   },
 ];
 
-const skills: string[] = [
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'PHP',
-  'Python',
-  'TypeScript',
-  'React',
-  'Next.js',
-  'Tailwind',
-  'Laravel',
-  'Git',
-  'Figma',
-  'Firebase',
-  'Supabase',
-  'Google APIs',
-];
 
 const ResumeSection = () => {
   const [isHovered, setIsHovered] = useState(false);

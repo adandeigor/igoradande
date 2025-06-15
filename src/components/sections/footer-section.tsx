@@ -1,14 +1,54 @@
 'use client'
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail, Phone, ArrowUp } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { JSX, useState } from 'react';
+
+// Interface for navigation links
+interface NavLink {
+  name: string;
+  href: string;
+}
+
+// Interface for social links
+interface SocialLink {
+  name: string;
+  href: string;
+  icon: JSX.Element;
+}
+
+// Interface for contact information
+interface ContactInfo {
+  name: string;
+  info: string;
+  icon: JSX.Element;
+}
+
+// Interface for transition properties
+interface TransitionProps {
+  duration: number;
+  delay: number;
+  ease: string;
+}
+
+// Interface for animation properties
+interface AnimationProps {
+  opacity: number;
+  y: number;
+  transition: TransitionProps;
+}
+
+// Interface for initial state
+interface InitialState {
+  opacity: number;
+  y: number;
+}
 
 const Footer = () => {
   const [isHoveredIndex, setIsHoveredIndex] = useState<number | null>(null);
   const [isScrollTopHovered, setIsScrollTopHovered] = useState(false);
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { name: 'Accueil', href: '#welcome-section' },
     { name: 'À Propos', href: '#about-section' },
     { name: 'Projets', href: '#projects-section' },
@@ -16,46 +56,26 @@ const Footer = () => {
     { name: 'Contact', href: '#contact-section' },
   ];
 
-  const socialLinks = [
+  const socialLinks: SocialLink[] = [
     { name: 'GitHub', href: 'https://github.com/adandeigor', icon: <Github className="w-5 h-5" /> },
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/igor-adande-dev/', icon: <Linkedin className="w-5 h-5" /> },
     { name: 'Twitter', href: 'https://x.com/dev_pirate_i_am', icon: <Twitter className="w-5 h-5" /> },
   ];
 
-  const contactInfo = [
+  const contactInfo: ContactInfo[] = [
     { name: 'E-mail', info: 'adandehustler@gmail.com', icon: <Mail className="w-5 h-5" /> },
     { name: 'Téléphone', info: '+229 015 794 0206', icon: <Phone className="w-5 h-5" /> },
   ];
 
-interface TransitionProps {
-    duration: number;
-    delay: number;
-    ease: string;
-}
-
-interface AnimationProps {
-    opacity: number;
-    y: number;
-    transition: TransitionProps;
-}
-
-interface ItemVariants {
-    initial: {
-        opacity: number;
-        y: number;
-    };
-    animate: (index: number) => AnimationProps;
-    [key: string]: any;
-}
-
-const itemVariants: ItemVariants = {
+  const itemVariants: Variants = {
     initial: { opacity: 0, y: 20 },
     animate: (index: number) => ({
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.6, delay: index * 0.1, ease: 'easeOut' },
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, delay: index * 0.1, ease: 'easeOut' },
     }),
-};
+    key: (index: number) => `item-${index}`,
+  };
 
   const handleScrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -68,7 +88,7 @@ const itemVariants: ItemVariants = {
           {/* Brand/Description */}
           <motion.div
             custom={0}
-            variants={itemVariants}
+            variants={itemVariants as Variants}
             initial="initial"
             animate="animate"
             className="space-y-4"
@@ -109,7 +129,7 @@ const itemVariants: ItemVariants = {
                       animate={{ x: isHoveredIndex === index ? 5 : 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      &rarr;
+                      →
                     </motion.span>
                   </Link>
                 </motion.li>
@@ -185,7 +205,7 @@ const itemVariants: ItemVariants = {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            &copy; {new Date().getFullYear()} Igor ADANDE. Tous droits réservés.
+            © {new Date().getFullYear()} Igor ADANDE. Tous droits réservés.
           </motion.p>
           <motion.button
             onClick={handleScrollTop}
