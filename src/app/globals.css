@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #8447ff;
+  --color-dark: #1c0221;
+  --color-secondary: #0e105b;
+  --color-default: #8447ff;
+  --color-gray: #7c7c7c;
+  --color-white: #f4faff;
+
+  --font-hubot: var(--font-hubot-sans), sans-serif;
+  --font-jura: var(--font-jura), sans-serif;
+  --font-montserrat: var(--font-montserrat), sans-serif;
+}
