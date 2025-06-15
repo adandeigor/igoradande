@@ -31,18 +31,7 @@ interface TransitionProps {
   ease: string;
 }
 
-// Interface for animation properties
-interface AnimationProps {
-  opacity: number;
-  y: number;
-  transition: TransitionProps;
-}
 
-// Interface for initial state
-interface InitialState {
-  opacity: number;
-  y: number;
-}
 
 const Footer = () => {
   const [isHoveredIndex, setIsHoveredIndex] = useState<number | null>(null);
