@@ -7,7 +7,7 @@ import {
 import "./globals.css";
 import Navigation from "@/components/navigation/navigation";
 import Footer from "@/components/sections/footer-section";
-
+import { Analytics } from "@vercel/analytics/next"
 const hubotSans = Hubot_Sans({
   variable: "--font-hubot-sans",
   subsets: ["latin"],
@@ -41,6 +41,7 @@ export default function RootLayout({
       <body
         className={` ${hubotSans.variable} ${jura.variable} ${montserrat.variable} antialiased`}
       >
+        <Analytics/>
         <Navigation/>
         {children}
         <Footer/>

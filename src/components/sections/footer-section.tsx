@@ -24,12 +24,6 @@ interface ContactInfo {
   icon: JSX.Element;
 }
 
-// Interface for transition properties
-interface TransitionProps {
-  duration: number;
-  delay: number;
-  ease: string;
-}
 
 
 
