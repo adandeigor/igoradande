@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import NavigationData, { NavigationItem } from "./data";
+import Image from "next/image";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,12 +19,15 @@ const Navigation = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex flex-row items-end justify-center gap-3"
+            className="flex flex-row items-center justify-center gap-3"
           >
-            <div className="flex flex-row items-end gap-2">
-              <div className="w-1 bg-primary h-[10px] rotate-20"></div>
-              <div className="w-1 bg-primary h-[20px] rotate-20"></div>
-              <div className="w-1 bg-primary h-[30px] rotate-20"></div>
+            <div>
+              <Image
+                src="/images/logo.png"
+                alt="Logo"
+                width={40}
+                height={40}
+              />
             </div>
             <span className="text-md md:text-2xl font-jura font-black text-primary">
               Igor ADANDE
