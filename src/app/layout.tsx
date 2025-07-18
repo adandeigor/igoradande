@@ -76,8 +76,8 @@ export const metadata: Metadata = {
     images: ["https://igoradande.vercel.app/images/me.jpg"], // Remplace par une image réelle
   },
   icons: {
-    icon: "/favicon.ico", // Ajoute un favicon dans public/
-    apple: "/apple-icon.png", // Ajoute une icône pour Apple
+    icon: "/images/favicon.ico", // Ajoute un favicon dans public/
+    apple: "/images/logo.png", // Ajoute une icône pour Apple
   },
 };
 
