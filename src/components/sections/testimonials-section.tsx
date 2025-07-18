@@ -18,6 +18,19 @@ const testimonials: Testimonial[] = [
     title: 'CEO',
     company: 'Digital Innovation',
   }
+  ,
+  {
+    quote: 'Igor est un développeur talentueux et passionné. Sa capacité à comprendre rapidement les besoins du projet et à proposer des solutions innovantes est impressionnante. Il a su apporter une réelle valeur ajoutée à notre équipe.',
+    author: 'John Dossou',
+    title: 'Développeur Senior',
+    company: 'Freelance',
+  },
+  {
+    quote: 'Travailler avec Igor a été une expérience enrichissante. Sa créativité et son approche méthodique ont permis de mener à bien notre projet dans les délais impartis. Je recommande vivement ses compétences à toute entreprise cherchant un développeur sérieux et compétent.',
+    author: 'Jane Smith',
+    title: 'Designer',
+    company: 'Freelance',
+  },
 ];
 
 const TestimonialsSection = () => {

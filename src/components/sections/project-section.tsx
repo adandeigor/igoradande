@@ -1,6 +1,7 @@
 'use client'
 import { motion } from "framer-motion";
 import { Code, ExternalLink, Github } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 const projects = [
@@ -13,20 +14,20 @@ const projects = [
     github: "https://github.com/adandeigor/encrypt-dev",
   },
   {
-    title: "Blog Multi-Utilisateur",
-    description: "Un blog multi-utilisateur avec authentification, gestion des articles et commentaires, utilisant Next.js et Supabase pour une expérience fluide. (en cours de développement)",
-    tech: ["Next JS", "Supabase", "Typescript", "Prisma", "Tailwind CSS", "JWT", "Laravel"],
+    title: "ToolBox Pro",
+    description: "Une suite d'outils pour les développeurs, graphistes et personnes lambdas, offrant des fonctionnalités comme la génération de QR codes, la compression d'images sans perte, la conversion de fichiers, et plus encore.",
+    tech: ["Vite", "React", "Typescript", "ShadCn UI", "Tailwind CSS"],
     image: <Code className="w-16 h-16 text-primary" />,
     link: "",
-    github: "",
+    github: "https://github.com/adandeigor/file-flow-dev.git",
   },
   {
-    title: "Application de Gestion de biens Locatifs",
-    description: "Une application de gestion des locations de biens immobiliers, permettant aux propriétaires de louer leurs biens et d'avoir un espace de gestion centré pour les locations. (en cours de développement)",
+    title: "Application de Gestion des bibliothèques et de maketplace de livres",
+    description: "Application web de gestion des bibliothèques et de maketplace de livres au Bénin, créer en collaboration avec mon binôme lors des examens de fin d'années en 2ème année. (en cours de développement)",
     tech: ["Next JS", "Supabase", "Typescript", "Prisma"],
     image: <Code className="w-16 h-16 text-primary" />,
     link: "#",
-    github: "#",
+    github: "https://github.com/adandeigor/library.git",
   },
   {
     title : "Benin Event's",
@@ -34,7 +35,7 @@ const projects = [
     tech : ["Next JS", "Supabase", "Typescript", "Prisma", "Shadcn UI", "Framer Motion", "Zod", "Zustand"],
     image :  <Code className="w-16 h-16 text-primary" />,
     link : "#",
-    github: "#"
+    github: "https://github.com/adandeigor/benin-events.git"
   }
 ];
 
@@ -146,20 +147,20 @@ const ProjectsSection = () => {
                   animate={{ opacity: hoveredIndex === index ? 1 : 0, y: hoveredIndex === index ? 0 : 10 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <a
+                  <Link
                     href={project.link}
                     className="flex items-center gap-2 text-primary font-montserrat text-sm hover:underline cursor-pointer"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Voir le projet
-                  </a>
-                  <a  
+                  </Link>
+                  <Link  
                     href={project.github}
                     className="flex items-center gap-2 text-primary font-montserrat text-sm hover:underline cursor-pointer"
                   >
                     <Github className="w-4 h-4" />
                     GitHub
-                  </a>
+                  </Link>
                 </motion.div>
               </div>
 

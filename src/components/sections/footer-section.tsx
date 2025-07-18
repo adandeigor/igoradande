@@ -46,7 +46,7 @@ const Footer = () => {
   ];
 
   const contactInfo: ContactInfo[] = [
-    { name: 'E-mail', info: 'adandehustler@gmail.com', icon: <Mail className="w-5 h-5" /> },
+    { name: 'E-mail', info: 'contact@igoradande.tech', icon: <Mail className="w-5 h-5" /> },
     { name: 'Téléphone', info: '+229 015 794 0206', icon: <Phone className="w-5 h-5" /> },
   ];
 
