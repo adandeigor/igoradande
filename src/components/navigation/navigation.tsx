@@ -6,9 +6,9 @@ import NavigationData, { NavigationItem } from "./data";
 import Image from "next/image";
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen(!isOpen)
 
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
