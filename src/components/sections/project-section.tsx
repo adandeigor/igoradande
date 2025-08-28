@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { projects } from "@/data/projects";
-import { getProjectIcon } from "@/utils/project-icons";
+import { projects } from "../../data/projects";
+import { getProjectIcon } from "../../utils/project-icons";
 
 const ProjectsSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
