@@ -12,3 +12,85 @@
   --font-jura: var(--font-jura), sans-serif;
   --font-montserrat: var(--font-montserrat), sans-serif;
 }
+
+/* Mode sombre */
+.dark {
+  --color-primary: #a855f7;
+  --color-dark: #f8fafc;
+  --color-secondary: #6366f1;
+  --color-gray: #94a3b8;
+  --color-white: #0f172a;
+}
+
+/* Transitions pour le changement de thème */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Classe pour empêcher les transitions de thème */
+.no-theme-transition,
+.no-theme-transition * {
+  transition: none !important;
+}
+
+/* Force le footer à rester en mode sombre sur tous les appareils */
+footer {
+  background-color: #1c0221 !important;
+}
+
+/* Styles spécifiques au mode sombre */
+.dark body {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.dark .bg-white {
+  background-color: #1e293b;
+}
+
+.dark .text-gray-900 {
+  color: #f8fafc;
+}
+
+.dark .text-gray-600 {
+  color: #94a3b8;
+}
+
+.dark .text-gray-700 {
+  color: #cbd5e1;
+}
+
+.dark .border-gray\/20 {
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+.dark .border-gray\/30 {
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+.dark .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus styles améliorés pour l'accessibilité */
+.focus-visible:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Skip link pour l'accessibilité */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-primary);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}

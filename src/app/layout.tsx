@@ -79,6 +79,23 @@ export const metadata: Metadata = {
     icon: "/images/favicon.ico", // Ajoute un favicon dans public/
     apple: "/images/logo.png", // Ajoute une icône pour Apple
   },
+  // PWA metadata
+  manifest: "/manifest.json",
+  themeColor: "#8447ff",
+  colorScheme: "light dark",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Igor Portfolio",
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({
@@ -91,13 +108,21 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
+        <meta name="theme-color" content="#8447ff" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Igor Portfolio" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/images/logo.png" />
       </head>
       <body
         className={`${hubotSans.variable} ${jura.variable} ${montserrat.variable} antialiased`}
       >
         <Analytics />
         <Navigation />
-        {children}
+        <main id="main-content">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
