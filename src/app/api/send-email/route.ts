@@ -4,8 +4,8 @@ import { validateContactForm, sanitizeContactForm, validateSecurityHeaders, Cont
 
 export async function POST(req: Request) {
   try {
-    // Validation des headers de sécurité
-    if (!validateSecurityHeaders(req)) {
+    // Validation des headers de sécurité (plus permissive en développement)
+    if (process.env.NODE_ENV === 'production' && !validateSecurityHeaders(req)) {
       return Response.json(
         { message: 'Requête non autorisée' },
         { status: 403 }

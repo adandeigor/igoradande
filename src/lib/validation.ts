@@ -91,9 +91,22 @@ export function validateSecurityHeaders(req: Request): boolean {
     return false
   }
 
-  // Vérifier l'origine si disponible
-  if (origin && !origin.includes(process.env.NEXT_PUBLIC_SITE_URL || 'localhost')) {
-    return false
+  // En mode développement, être plus permissif
+  if (process.env.NODE_ENV === 'development') {
+    return true
+  }
+
+  // Vérifier l'origine si disponible et en production
+  if (origin && process.env.NEXT_PUBLIC_SITE_URL) {
+    const allowedOrigins = [
+      process.env.NEXT_PUBLIC_SITE_URL,
+      process.env.NEXT_PUBLIC_SITE_URL.replace('http://', 'https://'),
+      process.env.NEXT_PUBLIC_SITE_URL.replace('https://', 'http://')
+    ]
+    
+    if (!allowedOrigins.some(allowedOrigin => origin.includes(allowedOrigin))) {
+      return false
+    }
   }
 
   return true
