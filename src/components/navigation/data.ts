@@ -1,4 +1,4 @@
-import { LucideIcon } from "lucide-react";
+import { Briefcase, FileText, Folder, Home, Info, LucideIcon, Mail, Star } from "lucide-react";
 
 export interface NavigationItem {
   title: string;
@@ -7,29 +7,49 @@ export interface NavigationItem {
   isActive: boolean;
 }
 
-export const navigationData = [
+const NavigationData:NavigationItem[] = [
   {
-    name: 'home',
-    href: '#welcome-section'
+    title: 'Accueil',
+    href: '#welcome-section',
+    icon: Home,
+    isActive: true,
   },
   {
-    name: 'about',
-    href: '#about-section'
+    title: 'A Propos',
+    href: '#about-section',
+    icon: Info,
+    isActive: false,
   },
   {
-    name: 'projects',
-    href: '#projects-section'
+    title: 'Projets',
+    href: '#projects-section',
+    icon: Folder,
+    isActive: false,
   },
   {
-    name: 'services',
-    href: '#services-section'
+    title: 'Resume',
+    href: '#resume-section',
+    icon: FileText,
+    isActive: false,
   },
   {
-    name: 'testimonials',
-    href: '#testimonials-section'
+    title: 'Services',
+    href: '#services-section',
+    icon: Briefcase,
+    isActive: false,
   },
   {
-    name: 'contact',
-    href: '#contact-section'
+    title: 'Témoignages',
+    href: '#testimonials-section',
+    icon: Star,
+    isActive: false,
+  },
+    {
+    title: 'Contact',
+    href: '#contact-section',
+    icon: Mail,
+    isActive: false,
   }
-];
+]
+
+export default NavigationData

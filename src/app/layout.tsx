@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
+
 import { Analytics } from "@vercel/analytics/react";
+import Navigation from "@/components/navigation/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -81,6 +83,8 @@ export default async function RootLayout({
       </head>
       <body className={inter.className}>
           <main id="main-content">
+            
+            <Navigation/>
             {children}
           </main>
         <Analytics />
