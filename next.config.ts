@@ -1,11 +1,24 @@
 import type { NextConfig } from "next";
-import createNextIntlPlugin from 'next-intl/plugin';
-
-const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   /* config options here */
-  // pwa: { /* ... pwa configuration ... */ }, // Temporarily removed
+  pwa: {
+    dest: "public",
+    register: true,
+    skipWaiting: true,
+    runtimeCaching: [
+      {
+        urlPattern: /^https?.*/,
+        handler: "NetworkFirst",
+        options: {
+          cacheName: "offline-cache",
+          expiration: {
+            maxEntries: 200,
+          },
+        },
+      },
+    ],
+  },
 };
 
-export default withNextIntl(nextConfig);
+export default nextConfig

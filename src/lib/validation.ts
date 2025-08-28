@@ -80,7 +80,6 @@ export function sanitizeContactForm(data: ContactFormData): ContactFormData {
     message: sanitizeInput(data.message)
   }
 }
-
 // Validation des headers de sécurité
 export function validateSecurityHeaders(req: Request): boolean {
   const userAgent = req.headers.get('user-agent')
@@ -111,3 +110,4 @@ export function validateSecurityHeaders(req: Request): boolean {
 
   return true
 }
+

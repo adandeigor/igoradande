@@ -18,7 +18,7 @@ const ServiceSection = dynamic(() => import("@/components/sections/service-secti
 const TestimonialsSection = dynamic(() => import("@/components/sections/testimonials-section"), { 
   loading: () => <div className="min-h-screen bg-white" /> 
 });
-const ContactSection = dynamic(() => import("@/components/sections/contatc-section"), { 
+const ContactSection = dynamic(() => import("@/components/sections/contact-section"), { 
   loading: () => <div className="min-h-screen bg-gray-50" /> 
 });
 const FooterSection = dynamic(() => import("@/components/sections/footer-section"), { 

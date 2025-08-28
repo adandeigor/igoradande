@@ -1,4 +1,4 @@
-import { Briefcase, FileText, Folder, Home, Info, LucideIcon, Mail, Star } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
 export interface NavigationItem {
   title: string;

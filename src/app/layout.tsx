@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-import { locales } from '@/i18n.config';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -62,31 +58,19 @@ export const metadata: Metadata = {
   },
 };
 
-interface RootLayoutProps {
-  children: React.ReactNode;
-  params: { locale: string };
-}
 
 export default async function RootLayout({
   children,
-  params: { locale }
-}: RootLayoutProps) {
-  // Validate that the incoming `locale` parameter is valid
-  if (!locales.includes(locale as any)) notFound();
-
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  const messages = await getMessages();
-
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html  suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#8447ff" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Igor ADANDE Portfolio" />
-        <meta name="msapplication-TileColor" content="#8447ff" />
-        <meta name="msapplication-config" content="/browserconfig.xml" />
         
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/images/logo.png" />
@@ -96,11 +80,9 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={inter.className}>
-        <NextIntlClientProvider messages={messages}>
           <main id="main-content">
             {children}
           </main>
-        </NextIntlClientProvider>
         <Analytics />
       </body>
     </html>

@@ -65,7 +65,6 @@ const Navigation = () => {
                 href={item.href}
                 className="text-sm font-montserrat font-medium text-gray-700 hover:text-primary transition-colors duration-300 dark:text-gray-300 dark:hover:text-primary"
                 whileHover={{ y: -2 }}
-                transition={{ duration: 0.2 }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
