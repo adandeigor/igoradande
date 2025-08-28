@@ -4,7 +4,7 @@ import { Code, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 const WelcomeSection = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false)
 
   return (
     <section 
