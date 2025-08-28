@@ -10,21 +10,21 @@ const ProjectsSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const cardVariants = {
-    initial: { opacity: 0, y: 50, rotateX: 10 },
-    animate: (index: number) => ({
-      opacity: 1,
-      y: 0,
-      rotateX: 0,
-      transition: { duration: 0.6, delay: index * 0.2, ease: "easeOut" },
-    }),
-    hover: { 
-      scale: 1.02, 
-      rotateX: 2, 
-      rotateY: 2, 
-      boxShadow: "0 15px 30px rgba(0, 0, 0, 0.2)",
-      transition: { duration: 0.3 },
-    },
-  };
+  initial: { opacity: 0, y: 50, rotateX: 10 },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    transition: { duration: 0.6, delay: index * 0.2, ease: [0.17, 0.67, 0.83, 0.67] },
+  }),
+  hover: { 
+    scale: 1.02, 
+    rotateX: 2, 
+    rotateY: 2, 
+    boxShadow: "0 15px 30px rgba(0, 0, 0, 0.2)",
+    transition: { duration: 0.3 },
+  },
+};
 
   return (
     <section className="relative bg-white py-16 sm:py-24 overflow-hidden" id="projects-section">
@@ -70,7 +70,7 @@ const ProjectsSection = () => {
             <motion.div
               key={project.id}
               custom={index}
-              variants={cardVariants}
+              variants={cardVariants as any}
               initial="initial"
               animate="animate"
               whileHover="hover"
