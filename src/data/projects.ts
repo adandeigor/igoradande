@@ -31,7 +31,7 @@ export const projects: Project[] = [
   {
     id: 'toolbox-pro',
     title: "ToolBox Pro",
-    description: "Une suite d'outils pour les développeurs, graphistes et personnes lambdas, offrant des fonctionnalités comme la génération de QR codes, la compression d'images sans perte, la conversion de fichiers, et plus encore.",
+    description: "Une suite d'outils pour les développeurs, graphistes et personnes lambdas, offrant des fonctionnalités comme la génération de QR codes, la compression d'images sans perte, la conversion de fichiers, et plus encore. (développé avec Lovable)",
     tech: ["Vite", "React", "TypeScript", "ShadCn UI", "Tailwind CSS"],
     image: "code", // Utiliser une chaîne pour identifier l'icône
     link: "https://file-flow-dev.lovable.app/",
