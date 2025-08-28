@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 import { rateLimiter, getClientIP } from '../../../lib/rate-limiter';
-import { validateContactForm, sanitizeContactForm, validateSecurityHeaders, ContactFormData } from '@/lib/validation';
+import { validateContactForm, sanitizeContactForm, validateSecurityHeaders, ContactFormData } from '../../../lib/validation';
 
 export async function POST(req: Request) {
   try {
